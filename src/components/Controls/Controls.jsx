@@ -12,7 +12,7 @@ export default class Controls extends Component {
   };
 
   state = {
-    amount: 0,
+    amount: '',
   };
 
   handeleChange = e => {
@@ -21,7 +21,7 @@ export default class Controls extends Component {
     });
   };
 
-  reset = () => this.setState({ amount: 0 });
+  reset = () => this.setState({ amount: '' });
 
   handleDeposit = () => {
     if (Number(this.state.amount) === 0) {
@@ -29,6 +29,8 @@ export default class Controls extends Component {
     } else if (Number(this.state.amount) > 0) {
       this.props.onDeposit(Number(this.state.amount));
       this.reset();
+    } else {
+      toast('Введите положительное число!');
     }
   };
 
@@ -40,6 +42,8 @@ export default class Controls extends Component {
     } else if (Number(this.state.amount) > 0) {
       this.props.onWithdraw(Number(this.state.amount));
       this.reset();
+    } else {
+      toast('Введите положительное число!');
     }
   };
 
