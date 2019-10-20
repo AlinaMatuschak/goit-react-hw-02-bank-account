@@ -1,0 +1,10 @@
+.controls {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #062c56;
+}
+
+.controls button {
+  width: 50px;
+}
